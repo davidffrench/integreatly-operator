@@ -9,8 +9,10 @@ import (
 	k8serr "k8s.io/apimachinery/pkg/api/errors"
 
 	mdc "github.com/aerogear/mobile-developer-console-operator/pkg/apis/mdc/v1alpha1"
+	threescalev1 "github.com/integr8ly/integreatly-operator/pkg/apis/3scale/v1alpha1"
 	"github.com/integr8ly/integreatly-operator/pkg/apis/integreatly/v1alpha1"
 	integreatlyv1alpha1 "github.com/integr8ly/integreatly-operator/pkg/apis/integreatly/v1alpha1"
+	keycloak "github.com/integr8ly/integreatly-operator/pkg/apis/keycloak/v1alpha1"
 	moqclient "github.com/integr8ly/integreatly-operator/pkg/client"
 	"github.com/integr8ly/integreatly-operator/pkg/controller/installation/marketplace"
 	"github.com/integr8ly/integreatly-operator/pkg/controller/installation/products/config"
@@ -73,6 +75,9 @@ func basicInstallation() *v1alpha1.Installation {
 func getBuildScheme() (*runtime.Scheme, error) {
 	scheme := runtime.NewScheme()
 	err := integreatlyv1alpha1.SchemeBuilder.AddToScheme(scheme)
+	err = threescalev1.SchemeBuilder.AddToScheme(scheme)
+	err = keycloak.SchemeBuilder.AddToScheme(scheme)
+	err = integreatlyv1alpha1.SchemeBuilder.AddToScheme(scheme)
 	err = operatorsv1alpha1.AddToScheme(scheme)
 	err = marketplacev1.SchemeBuilder.AddToScheme(scheme)
 	err = corev1.SchemeBuilder.AddToScheme(scheme)
