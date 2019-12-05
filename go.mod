@@ -9,7 +9,6 @@ require (
 	github.com/aerogear/unifiedpush-operator v0.0.0-20190909105857-0efd293d3634
 	github.com/coreos/prometheus-operator v0.29.0
 	github.com/eclipse/che-operator v0.0.0-20190620145712-2f639261d8b5
-	github.com/fabric8-launcher/launcher-operator v0.1.3
 	github.com/ghodss/yaml v1.0.1-0.20180820084758-c7ce16629ff4
 	github.com/go-openapi/spec v0.19.4
 	github.com/google/uuid v1.1.1
